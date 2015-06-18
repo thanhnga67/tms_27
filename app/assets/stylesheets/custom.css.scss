@@ -50,6 +50,11 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+a {
+  color: #398439;
+  text-decoration: none;
+}
 /* header */
 
 #logo {
@@ -106,4 +111,19 @@ input {
 
 img {
   margin-top: 10px;
+}
+
+/*login form*/
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }

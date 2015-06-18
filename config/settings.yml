@@ -1,5 +1,6 @@
 user:
   maximum: 60
   minimum: 6
+  remember: 1
   avatar: https://secure.gravatar.com/avatar/#{gravatar_id}
   edit_avatar: http://gravatar.com/emails
