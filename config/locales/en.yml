@@ -41,6 +41,7 @@ en:
   add_user_fail: "Add Fail! User available"
   supervisor_of_course: "Supervisor of Course"
   trainee_in_course: "Trainee in Course"
+  course_of_user: "Course of User"
   Admin:
     All_user: "All users"
     edit: "|Edit"
