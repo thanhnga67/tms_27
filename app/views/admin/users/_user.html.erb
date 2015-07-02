@@ -1,6 +1,6 @@
 <ul class = "users">
   <li>
-    <%= link_to user.name, [:admin, user] %>
+    <%= link_to user.name, [user] %>
     <%= link_to t("Admin.edit"), edit_admin_user_path(user) %>
     <%= link_to t("Admin.delete"), [:admin, user], method: :delete, 
         data: {confirm: t("you_sure")} %>

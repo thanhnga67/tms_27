@@ -1,17 +1,19 @@
 <div class="col-md-8 pull-right">
   <center>
     <h1><%= t "User.activity" %></h1>
-    <% @activities.each do |activity| %>
-      <%= @user.name %>
-      <%= activity.content %>
-      <% if Settings.activity.joined == activity.content && !@user.courses.current_course.empty? %>
-        <%= @course.name %>
-      <% elsif Settings.activity.learn == activity.content %>
-        <%= t "Admin.subject" %>
-      <% else %>
-        <%= t "Admin.task" %>
+    <% @users.each do |user| %>
+      <% @activities.each do |activity| %>
+        <%= user.name %>
+        <%= activity.content %>
+        <% if Settings.activity.joined == activity.content %>
+          <%= @course.name %>
+        <% elsif Settings.activity.learn == activity.content %>
+          <%= t "Admin.subject" %>
+        <% else %>
+          <%= t "Admin.task" %>
+        <% end %>
+        <%= activity.created_at %><br/>
       <% end %>
-      <%= activity.created_at %><br/>
     <% end %>
   </center>
 </div>

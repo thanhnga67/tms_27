@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :user_subjects, only: [:edit, :update]
     resources :user_tasks, only: [:edit, :update]
   end
-  resources :courses, only: :show
+  resources :courses, only: [:show, :index]
   resources :user_subjects, only: [:edit, :update]
   resources :user_tasks, only: [:edit, :update]
 

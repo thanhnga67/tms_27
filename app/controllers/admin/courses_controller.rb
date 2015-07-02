@@ -19,7 +19,7 @@ class Admin::CoursesController < ApplicationController
     @course.supervisor_ids << current_user.id
     if @course.save
       flash[:success] = I18n.t "create_course_succ"
-      redirect_to root_url
+      redirect_to @course
     else
       render :new
     end

@@ -14,8 +14,13 @@
     </div>
   </div>
   <div>
-    <div class="btn btn-primary" style="margin: 10px"><%= @course.status %></div>
-    <div><%= link_to t("Admin.add_user"), admin_course_assign_users_path(@course), class: "btn btn-success" %></div>
+    <span class="btn btn-success disabled"><%= @course.status %></span>
+    <div class="edit">
+      <%= link_to t("edit_course"), edit_admin_course_path(@course), class: "btn btn-success" %>
+    </div>
+    <div class="add_user">
+      <%= link_to t("Admin.add_user"), admin_course_assign_users_path(@course), class: "btn btn-success" %>
+    </div>
   </div>
 </div>
 <div class="container" style="margin-top:40px">

@@ -12,7 +12,7 @@
     </div>
   </div>             
   <div class="row db-padding-btm db-attached">
-    <%= render "courses/activities", collection: @course, as: :course %>
+    <%= render "activities", collection: @course, as: :course %>
     <% @user.courses.each do |course| %>    
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <div class="db-wrapper">

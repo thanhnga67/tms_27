@@ -10,4 +10,9 @@
     <%= subject.name %>
     <%= subject.description %><br/>
   <% end %>
+  <h2><%= t "Admin.user_in_course" %></h2>
+  <% @users.each do |trainee| %>
+    <li><%= link_to trainee.name, trainee %></li>
+  <% end %>
+
 </div>

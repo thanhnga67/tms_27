@@ -66,6 +66,7 @@ en:
     add_user: "Add User to Course"
     course_delete: "Deleted!"
     assign_user: "Assign User"
+    user_in_course: "All user in course"
   User:
     training: "Training"
     start: "start"
