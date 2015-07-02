@@ -13,7 +13,9 @@ class Course < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: Settings.user.maximum}
   validates :description, presence: true
   validates :status, presence: true, length: {maximum: Settings.user.maximum}
-  
+  validates_presence_of :start, :finish
+  validate :finish_date_is_after_start_date
+
   after_update :set_course_activity, :check_finish
 
   scope :current_course, ->{where status: Settings.activity.start}
@@ -32,6 +34,13 @@ class Course < ActiveRecord::Base
           task.user_tasks.update_all status: Settings.subject.finish
         end
       end
+    end
+  end
+
+  def finish_date_is_after_start_date
+    return if finish.blank? || start.blank?
+    if finish < start
+      errors.add(:finish, "cannot be before the start date") 
     end
   end
 end

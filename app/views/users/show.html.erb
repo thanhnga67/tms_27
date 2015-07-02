@@ -26,13 +26,21 @@
                 <li><i class="glyphicon glyphicon-print"></i>
                   <%= subject.name %>
                   <% user_subject = UserSubject.find_by(user_id: @user.id, subject_id: subject.id) %>
-                  <%= link_to user_subject.status, edit_user_user_subject_path(@user, user_subject) %>
+                  <% if @user == current_user %>
+                    <%= link_to user_subject.status, edit_user_user_subject_path(@user, user_subject) %>
+                  <% else %>
+                    <b><%= user_subject.status %></b>
+                  <%  end %>
                   <% subject.tasks.each do |task| %>
                     <ul>
                       <li>
                         <%= task.name %>
                         <% user_task = UserTask.find_by(user_id: @user.id, task_id: task.id) %>
-                        <%= link_to user_task.status, edit_user_user_task_path(@user, user_task) %>
+                        <% if @user == current_user %>
+                          <%= link_to user_task.status, edit_user_user_task_path(@user, user_task) %>
+                        <% else %>
+                          <b><%= user_task.status %></b>
+                        <% end %>
                       </li>
                     </ul>
                   <% end %>
